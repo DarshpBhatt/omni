@@ -454,7 +454,7 @@ p {
 
 .tech-track {
     display: flex;
-    animation: techScroll 10s linear infinite;
+    animation: techScroll 50s linear infinite;
 }
 
 .tech-item {
