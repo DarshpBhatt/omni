@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniTrust - Strategic Technology Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="logo.png" alt="OmniTrust Logo" class="logo-img">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav">
+                    <div class="nav-links">
+                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#products" class="nav-link">Products</a>
+                        <a href="#team" class="nav-link">Team</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <button class="get-started-btn" onclick="scrollToContact()">Get Started</button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="mobile-menu-btn">
+                    <button onclick="toggleMobileMenu()" class="menu-toggle">
+                        <span class="hamburger" id="hamburger">☰</span>
+                        <span class="close-x" id="close-x" style="display: none;">✕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+                <a href="#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
+                <a href="#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
+                <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+                <button class="mobile-get-started-btn" onclick="scrollToContact(); closeMobileMenu();">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Background Elements -->
+            <div class="hero-background">
+                <div class="gradient-overlay"></div>
+                <div class="geometric-pattern"></div>
+                <div class="animated-bg-1"></div>
+                <div class="animated-bg-2"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <!-- Main Heading -->
+                    <div class="hero-heading">
+                        <h1>
+                            <span class="heading-line heading-bold">Strategic</span>
+                            <span class="heading-line heading-bold">Technology</span>
+                            <span class="heading-line heading-light">Solutions</span>
+                            <span class="heading-subtitle">FOR MODERN BUSINESS</span>
+                        </h1>
+                    </div>
+                    
+                    <!-- Subtitle -->
+                    <div class="hero-subtitle">
+                        <p>
+                            We partner with forward-thinking SMEs to deliver 
+                            <span class="highlight">custom software solutions</span>, 
+                            optimize operations, and drive measurable business growth through innovative technology.
+                        </p>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="scrollToServices()">
+                            Explore Our Services
+                            <span class="btn-arrow">→</span>
+                        </button>
+                        
+                        <button class="btn-secondary" onclick="scrollToContact()">
+                            <span class="btn-icon">📅</span>
+                            Schedule a Consultation
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators">
+                        <div class="trust-item">
+                            <div class="trust-dot red"></div>
+                            <span>Proudly Canadian</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-dot blue"></div>
+                            <span>Enterprise Solutions</span>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-dot purple"></div>
+                            <span>Custom Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </section>
+
+        <!-- Technologies Section -->
+        <section class="technologies">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technologies We Work With</h2>
+                    <p>Leveraging industry-leading platforms to deliver exceptional results</p>
+                </div>
+                
+                <!-- Continuous scrolling carousel -->
+                <div class="tech-carousel">
+                    <div class="tech-track" id="techTrack">
+                        <!-- First set -->
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://seeklogo.com/images/M/microsoft-dynamics-365-logo-5B781C55C5-seeklogo.com.png" alt="Dynamics 365">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                        </div>
+                        <!-- Duplicate set for seamless loop -->
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>We specialize in modernizing operations, enhancing performance, and creating scalable, tailor-made software solutions.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <div class="icon-container">🚀</div>
+                            </div>
+                            <h3>Process Digitalization</h3>
+                            <p>Streamline workflows and eliminate redundant tasks with efficient, digital solutions that improve productivity and reduce operational costs.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <div class="icon-container">⚡</div>
+                            </div>
+                            <h3>Business Optimization</h3>
+                            <p>Refine strategies, optimize resources, and align operations with growth objectives for long-term success and competitive advantage.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <div class="icon-container">💻</div>
+                            </div>
+                            <h3>Custom Software Development</h3>
+                            <p>From concept to deployment, we build cutting-edge applications tailored to your unique business needs and industry requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Products</h2>
+                    <p>Innovative solutions designed to solve real-world business challenges</p>
+                </div>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-content">
+                            <div class="product-image">
+                                <img src="boot.png" alt="BootEasy" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-header">
+                                    <h3>BootEasy</h3>
+                                    <span class="product-category">Business Management</span>
+                                </div>
+                                <p>A Business management Software catering to Parking Enforcement Management Agencies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-content">
+                            <div class="product-image">
+                                <img src="opti.png" alt="OptiRoute" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-header">
+                                    <h3>OptiRoute</h3>
+                                    <span class="product-category">Logistics</span>
+                                </div>
+                                <p>Optimize last mile delivery routes in seconds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet the Team</h2>
+                    <p>Our team provides the technical expertise and strategic vision to guide your business forward.</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Darsh Bhatt">
+                            </div>
+                            <h3>Darsh Bhatt</h3>
+                            <p class="team-role">Analyst / Developer</p>
+                            <p class="team-description">Darsh ensures top-notch engineering standards and continuous innovation in every project.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-avatar">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" alt="Radhey Patel">
+                            </div>
+                            <h3>Radhey Patel</h3>
+                            <p class="team-role">Principal Developer</p>
+                            <p class="team-description">Radhey optimizes internal workflows for seamless, efficient project delivery.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-avatar">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Dhruvil Patel">
+                            </div>
+                            <h3>Dhruvil Patel</h3>
+                            <p class="team-role">Solutions Architect</p>
+                            <p class="team-description">Dhruvil crafts scalable architectures aligned with client goals and modern best practices.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-content">
+                            <div class="team-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=300&h=300&fit=crop&crop=face" alt="Trusha Shah">
+                            </div>
+                            <h3>Trusha Shah</h3>
+                            <p class="team-role">Developer / Client Engagement</p>
+                            <p class="team-description">Trusha fosters lasting client relationships, turning needs into tangible strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nova Scotia Registration -->
+                <div class="registration-info">
+                    <div class="registration-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon">
+                        <span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>Ready to transform your business? Get in touch to explore how we can help you succeed.</p>
+                    <div class="contact-email">
+                        <span>📧</span>
+                        <span>General inquiries: </span>
+                        <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <h3>Send us a message</h3>
+                        </div>
+                        <div class="contact-card-content">
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Full Name"
+                                        required
+                                        class="form-input"
+                                    >
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Your Email Address"
+                                        required
+                                        class="form-input"
+                                    >
+                                </div>
+                                
+                                <div class="form-group">
+                                    <textarea
+                                        name="message"
+                                        placeholder="Describe your project or inquiry"
+                                        required
+                                        rows="5"
+                                        class="form-textarea"
+                                    ></textarea>
+                                </div>
+                                
+                                <button type="submit" class="form-submit-btn" id="submitBtn">
+                                    <span id="submitText">Send Message</span>
+                                    <span id="submitIcon">📨</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toast notification -->
+            <div id="toast" class="toast"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo and Description -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="OmniTrust Logo" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Strategic technology solutions for modern business. We partner with SMEs to deliver custom software solutions and drive measurable growth.
+                    </p>
+                    <div class="footer-contact">
+                        <p>For general enquiries feel free to email us at:</p>
+                        <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Process Digitalization</a></li>
+                        <li><a href="#services">Business Optimization</a></li>
+                        <li><a href="#services">Custom Software Development</a></li>
+                        <li><a href="#contact">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">BootEasy</a></li>
+                        <li><a href="#products">OptiRoute</a></li>
+                        <li><a href="#contact">Custom Solutions</a></li>
+                        <li><a href="#contact">Enterprise Software</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 OmniTrust. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
