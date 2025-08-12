@@ -23,7 +23,6 @@
                         <a href="#products" class="nav-link">Products</a>
                         <a href="#team" class="nav-link">Team</a>
                         <a href="#contact" class="nav-link">Contact</a>
-                        <button class="get-started-btn" onclick="scrollToContact()">Get Started</button>
                     </div>
                 </div>
 
@@ -44,7 +43,6 @@
                 <a href="#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
                 <a href="#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
                 <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
-                <button class="mobile-get-started-btn" onclick="scrollToContact(); closeMobileMenu();">Get Started</button>
             </div>
         </div>
     </nav>
@@ -131,53 +129,125 @@
                     <div class="tech-track" id="techTrack">
                         <!-- First set -->
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://seeklogo.com/images/M/microsoft-dynamics-365-logo-5B781C55C5-seeklogo.com.png" alt="Dynamics 365">
+                            <img src="https://seeklogo.com/images/M/microsoft-dynamics-365-logo-5B781C55C5-seeklogo.com.png" alt="Dynamics 365" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg" alt=".NET" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Twilio_logo.svg" alt="Twilio" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg" alt="Kafka" loading="lazy" decoding="async">
                         </div>
                         <!-- Duplicate set for seamless loop -->
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="GCP" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://seeklogo.com/images/M/microsoft-dynamics-365-logo-5B781C55C5-seeklogo.com.png" alt="Dynamics 365">
+                            <img src="https://seeklogo.com/images/M/microsoft-dynamics-365-logo-5B781C55C5-seeklogo.com.png" alt="Dynamics 365" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" loading="lazy" decoding="async">
                         </div>
                         <div class="tech-item">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg" alt="Redis" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg" alt=".NET" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Twilio_logo.svg" alt="Twilio" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform" loading="lazy" decoding="async">
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Apache_kafka.svg" alt="Kafka" loading="lazy" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -238,7 +308,7 @@
                     <div class="product-card">
                         <div class="product-content">
                             <div class="product-image">
-                                <img src="boot.png" alt="BootEasy" class="product-img">
+                                <img src="boot.png" alt="BootEasy" class="product-img" loading="lazy" decoding="async">
                             </div>
                             <div class="product-info">
                                 <div class="product-header">
@@ -253,7 +323,7 @@
                     <div class="product-card">
                         <div class="product-content">
                             <div class="product-image">
-                                <img src="opti.png" alt="OptiRoute" class="product-img">
+                                <img src="opti.png" alt="OptiRoute" class="product-img" loading="lazy" decoding="async">
                             </div>
                             <div class="product-info">
                                 <div class="product-header">
@@ -280,7 +350,7 @@
                     <div class="team-card">
                         <div class="team-content">
                             <div class="team-avatar">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Darsh Bhatt">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Darsh Bhatt" loading="lazy" decoding="async">
                             </div>
                             <h3>Darsh Bhatt</h3>
                             <p class="team-role">Analyst / Developer</p>
@@ -291,7 +361,7 @@
                     <div class="team-card">
                         <div class="team-content">
                             <div class="team-avatar">
-                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" alt="Radhey Patel">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face" alt="Radhey Patel" loading="lazy" decoding="async">
                             </div>
                             <h3>Radhey Patel</h3>
                             <p class="team-role">Principal Developer</p>
@@ -302,7 +372,7 @@
                     <div class="team-card">
                         <div class="team-content">
                             <div class="team-avatar">
-                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Dhruvil Patel">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Dhruvil Patel" loading="lazy" decoding="async">
                             </div>
                             <h3>Dhruvil Patel</h3>
                             <p class="team-role">Solutions Architect</p>
@@ -313,7 +383,7 @@
                     <div class="team-card">
                         <div class="team-content">
                             <div class="team-avatar">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=300&h=300&fit=crop&crop=face" alt="Trusha Shah">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?w=300&h=300&fit=crop&crop=face" alt="Trusha Shah" loading="lazy" decoding="async">
                             </div>
                             <h3>Trusha Shah</h3>
                             <p class="team-role">Developer / Client Engagement</p>
@@ -322,13 +392,7 @@
                     </div>
                 </div>
                 
-                <!-- Nova Scotia Registration -->
-                <div class="registration-info">
-                    <div class="registration-content">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon">
-                        <span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -404,7 +468,7 @@
                 <!-- Logo and Description -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="logo.png" alt="OmniTrust Logo" class="footer-logo-img">
+                        <img src="logo.png" alt="OmniTrust Logo" class="footer-logo-img" loading="lazy" decoding="async">
                     </div>
                     <p class="footer-description">
                         Strategic technology solutions for modern business. We partner with SMEs to deliver custom software solutions and drive measurable growth.
@@ -453,6 +517,10 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p>&copy; 2024 OmniTrust. All rights reserved.</p>
+                    <div class="footer-registration">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon" loading="lazy" decoding="async">
+                        <span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
+                    </div>
                     <div class="footer-bottom-links">
                         <a href="#privacy">Privacy Policy</a>
                         <a href="#terms">Terms of Service</a>
