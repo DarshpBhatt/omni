@@ -146,14 +146,26 @@ window.addEventListener('scroll', function() {
 // Image fallback functionality
 document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('img');
-    
+
     images.forEach(img => {
-        img.addEventListener('error', function() {
-            // If image fails to load, hide it or show placeholder
+        const isDynamics = /dynamics\s*365/i.test(img.alt || '');
+
+        img.addEventListener('error', function onImgError() {
+            // Try Dynamics 365 official icon CDN first if relevant, then generic Microsoft logo
+            if (isDynamics && this.dataset.dynamicsTried !== '1') {
+                this.dataset.dynamicsTried = '1';
+                this.src = 'https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/dynamics365_48x1.svg';
+                return;
+            }
+            if (this.dataset.genericTried !== '1') {
+                this.dataset.genericTried = '1';
+                this.src = 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg';
+                return;
+            }
             this.style.opacity = '0.3';
             this.alt = 'Image not available';
         });
-        
+
         img.addEventListener('load', function() {
             this.style.opacity = '1';
         });
