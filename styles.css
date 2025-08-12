@@ -1057,3 +1057,21 @@ p {
         height: 12rem;
     }
 }
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 70vh;
+  }
+  .hero-content {
+    padding: 3rem 1rem;
+  }
+  .hero-heading h1 {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+  }
+  .hero-subtitle p {
+    font-size: clamp(1rem, 1.6vw, 1.5rem);
+  }
+  .hero-buttons {
+    margin-bottom: 2.5rem;
+  }
+}
