@@ -272,7 +272,7 @@ p {
 }
 
 .hero-heading h1 {
-    font-size: clamp(3rem, 8vw, 8rem);
+    font-size: clamp(2.5rem, 6vw, 6rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
@@ -455,6 +455,10 @@ p {
 .tech-track {
     display: flex;
     animation: techScroll 60s linear infinite;
+}
+
+.tech-track:hover {
+    animation-play-state: paused;
 }
 
 .tech-item {
@@ -708,6 +712,13 @@ p {
     height: 1rem;
     object-fit: cover;
     border-radius: 0.125rem;
+}
+
+.footer-registration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
 }
 
 @media (min-width: 768px) {
@@ -1019,5 +1030,30 @@ p {
     
     .hero-content {
         padding: 2rem 1rem;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .animated-bg-1,
+    .animated-bg-2,
+    .scroll-arrow,
+    .trust-dot {
+        animation: none !important;
+    }
+    .tech-track {
+        animation: none !important;
+    }
+}
+
+/* Large screen hero background tweaks */
+@media (min-width: 1024px) {
+    .animated-bg-1 {
+        width: 20rem;
+        height: 20rem;
+    }
+    .animated-bg-2 {
+        width: 12rem;
+        height: 12rem;
     }
 }
