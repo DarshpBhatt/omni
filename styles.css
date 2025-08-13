@@ -1272,7 +1272,8 @@ p {
 /* Process Timeline */
 .process-section {
     padding: 4rem 0;
-    background: white;
+    background: #f9fafb;
+    position: relative;
 }
 
 .process-timeline {
