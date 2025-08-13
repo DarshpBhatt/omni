@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Process Digitalization in Canada | OmniTrust</title>
+	<title>Process Digitalization Services in Canada | OmniTrust</title>
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="canonical" href="https://omnitrust.ca/services/process-digitalization.html">
-	<meta name="description" content="Process digitalization services in Canada: streamline paper, email, and spreadsheet workflows into efficient online processes.">
+	<meta name="description" content="Transform your manual processes into efficient digital workflows. OmniTrust provides process digitalization services across Canada to streamline operations and boost productivity.">
 	<meta name="robots" content="index, follow">
-	<meta property="og:title" content="Process Digitalization in Canada | OmniTrust">
-	<meta property="og:description" content="Streamline operations by transforming manual workflows into seamless digital processes across Canada.">
+	<meta property="og:title" content="Process Digitalization Services in Canada | OmniTrust">
+	<meta property="og:description" content="Streamline operations by transforming manual workflows into seamless digital processes. Expert process digitalization services across Canada.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://omnitrust.ca/services/process-digitalization.html">
 	<meta property="og:image" content="https://omnitrust.ca/logo.png">
@@ -27,26 +27,492 @@
 	</script>
 </head>
 <body>
-	<main class="container">
-		<section class="section-header">
-			<h1>Process Digitalization</h1>
-			<p>We help organizations across Canada digitize and automate paper-based workflows.</p>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="nav-container">
+			<div class="nav-content">
+				<!-- Logo -->
+				<div class="logo">
+					<a href="/">
+						<img src="../logo.png" alt="OmniTrust Logo" class="logo-img">
+					</a>
+				</div>
+
+				<!-- Desktop Navigation -->
+				<div class="desktop-nav">
+					<div class="nav-links">
+						<a href="/#services" class="nav-link">Services</a>
+						<a href="/#products" class="nav-link">Products</a>
+						<a href="/#team" class="nav-link">Team</a>
+						<a href="/#contact" class="nav-link">Contact</a>
+					</div>
+				</div>
+
+				<!-- Mobile menu button -->
+				<div class="mobile-menu-btn">
+					<button onclick="toggleMobileMenu()" class="menu-toggle">
+						<span class="hamburger" id="hamburger">☰</span>
+						<span class="close-x" id="close-x" style="display: none;">✕</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Navigation -->
+		<div id="mobileMenu" class="mobile-nav">
+			<div class="mobile-nav-content">
+				<a href="/#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+				<a href="/#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
+				<a href="/#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
+				<a href="/#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- Breadcrumb Navigation -->
+		<section class="breadcrumb">
+			<div class="container">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb-list">
+						<li><a href="/">Home</a></li>
+						<li><a href="/#services">Services</a></li>
+						<li aria-current="page">Process Digitalization</li>
+					</ol>
+				</nav>
+			</div>
 		</section>
+
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<div class="service-hero-content">
+					<h1>Process Digitalization</h1>
+					<p class="hero-subtitle">Transform your manual workflows into efficient, automated digital processes that scale with your business</p>
+					<div class="hero-buttons">
+						<button class="btn-primary" onclick="scrollToContact()">
+							Get Started
+							<span class="btn-arrow">→</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Overview Section -->
+		<section class="service-overview">
+			<div class="container">
+				<div class="section-header">
+					<h2>Digitize Your Business Operations</h2>
+					<p>We help organizations across Canada transition from paper-based and manual processes to streamlined digital workflows that improve efficiency, reduce errors, and provide real-time insights.</p>
+				</div>
+				
+				<div class="overview-content">
+					<div class="overview-text">
+						<h3>Why Process Digitalization Matters</h3>
+						<p>In today's fast-paced business environment, manual processes are holding you back. Paper forms get lost, spreadsheets become outdated, and email approvals create bottlenecks. Our process digitalization services transform these inefficient workflows into automated systems that:</p>
+						<ul class="feature-list">
+							<li>Eliminate manual data entry and reduce human errors</li>
+							<li>Provide real-time visibility into process status</li>
+							<li>Enable remote work and collaboration</li>
+							<li>Create audit trails for compliance</li>
+							<li>Scale effortlessly as your business grows</li>
+						</ul>
+					</div>
+					<div class="overview-stats">
+						<div class="stat-card">
+							<div class="stat-number">75%</div>
+							<div class="stat-label">Reduction in Processing Time</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">90%</div>
+							<div class="stat-label">Fewer Manual Errors</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">60%</div>
+							<div class="stat-label">Cost Savings</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
 		<section class="services">
-			<div class="services-grid">
-				<div class="service-card"><div class="service-content"><h3>Workflow Mapping</h3><p>Document current processes and define optimal digital flows.</p></div></div>
-				<div class="service-card"><div class="service-content"><h3>Form & Data Capture</h3><p>Replace spreadsheets and email with structured forms and validation.</p></div></div>
-				<div class="service-card"><div class="service-content"><h3>Automation</h3><p>Trigger notifications and approvals to reduce manual steps.</p></div></div>
+			<div class="container">
+				<div class="section-header">
+					<h2>Our Process Digitalization Services</h2>
+					<p>Comprehensive solutions to modernize every aspect of your business operations</p>
+				</div>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">📊</div>
+						<div class="service-content">
+							<h3>Workflow Analysis & Mapping</h3>
+							<p>We start by documenting your current processes, identifying bottlenecks, and designing optimal digital workflows that align with your business goals.</p>
+							<ul class="service-features">
+								<li>Process documentation</li>
+								<li>Bottleneck identification</li>
+								<li>Workflow optimization</li>
+								<li>ROI analysis</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">📝</div>
+						<div class="service-content">
+							<h3>Digital Forms & Data Capture</h3>
+							<p>Replace paper forms and spreadsheets with smart digital forms featuring validation, conditional logic, and automatic routing.</p>
+							<ul class="service-features">
+								<li>Custom form design</li>
+								<li>Data validation rules</li>
+								<li>Mobile-responsive forms</li>
+								<li>Integration with existing systems</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">⚡</div>
+						<div class="service-content">
+							<h3>Process Automation</h3>
+							<p>Automate repetitive tasks, approvals, and notifications to reduce manual work and accelerate your business processes.</p>
+							<ul class="service-features">
+								<li>Automated approvals</li>
+								<li>Email notifications</li>
+								<li>Task assignments</li>
+								<li>Deadline tracking</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">📈</div>
+						<div class="service-content">
+							<h3>Reporting & Analytics</h3>
+							<p>Gain real-time insights into your processes with custom dashboards, KPI tracking, and detailed analytics.</p>
+							<ul class="service-features">
+								<li>Real-time dashboards</li>
+								<li>Performance metrics</li>
+								<li>Trend analysis</li>
+								<li>Custom reports</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🔄</div>
+						<div class="service-content">
+							<h3>Systems Integration</h3>
+							<p>Connect your digitized processes with existing software including ERP, CRM, accounting, and other business systems.</p>
+							<ul class="service-features">
+								<li>API development</li>
+								<li>Data synchronization</li>
+								<li>Legacy system integration</li>
+								<li>Cloud platform connectivity</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🛡️</div>
+						<div class="service-content">
+							<h3>Compliance & Security</h3>
+							<p>Ensure your digital processes meet regulatory requirements with built-in compliance features and enterprise-grade security.</p>
+							<ul class="service-features">
+								<li>Audit trails</li>
+								<li>Access controls</li>
+								<li>Data encryption</li>
+								<li>Compliance reporting</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section id="contact" class="contact">
-			<div class="contact-form-container">
-				<div class="contact-card"><div class="contact-card-header"><h3>Request a consultation</h3></div>
-				<div class="contact-card-content">
-					<p>Email <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a></p>
-				</div></div>
+
+		<!-- Process Section -->
+		<section class="process-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Our Digitalization Process</h2>
+					<p>A proven methodology to ensure successful digital transformation</p>
+				</div>
+				<div class="process-timeline">
+					<div class="process-step">
+						<div class="step-number">1</div>
+						<h3>Discovery & Assessment</h3>
+						<p>We analyze your current processes, understand your pain points, and identify opportunities for improvement.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">2</div>
+						<h3>Solution Design</h3>
+						<p>Our team designs optimized digital workflows tailored to your specific business needs and objectives.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">3</div>
+						<h3>Development & Testing</h3>
+						<p>We build and rigorously test your digital solutions to ensure they meet all requirements and perform flawlessly.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">4</div>
+						<h3>Implementation & Training</h3>
+						<p>Smooth deployment with comprehensive training to ensure your team can effectively use the new digital processes.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">5</div>
+						<h3>Support & Optimization</h3>
+						<p>Ongoing support and continuous improvement to ensure your digital processes evolve with your business.</p>
+					</div>
+				</div>
 			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section class="benefits-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Benefits of Process Digitalization</h2>
+					<p>Transform your business operations and unlock new levels of efficiency</p>
+				</div>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<div class="benefit-icon">⏱️</div>
+						<h3>Save Time</h3>
+						<p>Reduce process completion time by up to 75% through automation and elimination of manual tasks.</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">💰</div>
+						<h3>Reduce Costs</h3>
+						<p>Lower operational costs by eliminating paper, reducing errors, and improving resource utilization.</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">📊</div>
+						<h3>Improve Accuracy</h3>
+						<p>Minimize human errors with automated data validation and standardized processes.</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">🚀</div>
+						<h3>Scale Easily</h3>
+						<p>Digital processes scale effortlessly as your business grows without proportional cost increases.</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">👥</div>
+						<h3>Enhance Collaboration</h3>
+						<p>Enable teams to work together seamlessly, regardless of location, with cloud-based workflows.</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">📈</div>
+						<h3>Data-Driven Decisions</h3>
+						<p>Access real-time analytics and insights to make informed business decisions quickly.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Industries Section -->
+		<section class="industries-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Industries We Serve</h2>
+					<p>Tailored digitalization solutions for various sectors across Canada</p>
+				</div>
+				<div class="industries-list">
+					<div class="industry-item">
+						<h4>Manufacturing</h4>
+						<p>Quality control, inventory management, production tracking</p>
+					</div>
+					<div class="industry-item">
+						<h4>Healthcare</h4>
+						<p>Patient forms, appointment scheduling, compliance documentation</p>
+					</div>
+					<div class="industry-item">
+						<h4>Finance</h4>
+						<p>Loan applications, KYC processes, regulatory reporting</p>
+					</div>
+					<div class="industry-item">
+						<h4>Retail</h4>
+						<p>Order processing, inventory management, customer feedback</p>
+					</div>
+					<div class="industry-item">
+						<h4>Education</h4>
+						<p>Student enrollment, course management, certification tracking</p>
+					</div>
+					<div class="industry-item">
+						<h4>Government</h4>
+						<p>Permit applications, citizen services, interdepartmental workflows</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="faq-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Frequently Asked Questions</h2>
+					<p>Common questions about our process digitalization services</p>
+				</div>
+				<div class="faq-grid">
+					<div class="faq-item">
+						<h3>How long does process digitalization take?</h3>
+						<p>The timeline varies based on complexity, but most projects are completed within 2-6 months. We'll provide a detailed timeline during the discovery phase.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Will my team need extensive training?</h3>
+						<p>We design intuitive systems and provide comprehensive training. Most users become proficient within a few days of hands-on use.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Can you integrate with our existing systems?</h3>
+						<p>Yes, we specialize in integrating digital workflows with existing ERP, CRM, accounting, and other business systems.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Is our data secure during and after digitalization?</h3>
+						<p>Absolutely. We implement enterprise-grade security measures including encryption, access controls, and regular security audits.</p>
+					</div>
+					<div class="faq-item">
+						<h3>What if we need to modify processes later?</h3>
+						<p>Our solutions are designed to be flexible. We can easily modify workflows as your business needs evolve.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Do you provide ongoing support?</h3>
+						<p>Yes, we offer various support packages to ensure your digital processes continue running smoothly and efficiently.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2>Ready to Transform Your Business Processes?</h2>
+					<p>Let's discuss how process digitalization can streamline your operations and drive growth.</p>
+					<div class="cta-buttons">
+						<button class="btn-primary" onclick="scrollToContact()">
+							Schedule a Consultation
+							<span class="btn-arrow">→</span>
+						</button>
+						<a href="/" class="btn-secondary">
+							<span class="btn-icon">←</span>
+							Back to Home
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="section-header">
+					<h2>Start Your Digital Transformation</h2>
+					<p>Contact us today to discuss your process digitalization needs</p>
+				</div>
+				<div class="contact-form-container">
+					<div class="contact-card">
+						<div class="contact-card-header">
+							<h3>Request a Consultation</h3>
+						</div>
+						<div class="contact-card-content">
+							<form id="contactForm" class="contact-form">
+								<div class="form-group">
+									<input type="text" id="name" name="name" required placeholder=" ">
+									<label for="name">Your Name</label>
+								</div>
+								<div class="form-group">
+									<input type="email" id="email" name="email" required placeholder=" ">
+									<label for="email">Email Address</label>
+								</div>
+								<div class="form-group">
+									<input type="text" id="company" name="company" placeholder=" ">
+									<label for="company">Company Name</label>
+								</div>
+								<div class="form-group">
+									<textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+									<label for="message">Tell us about your process challenges</label>
+								</div>
+								<button type="submit" class="submit-btn">
+									<span>Send Message</span>
+									<span class="btn-arrow">→</span>
+								</button>
+							</form>
+							<div class="contact-alternative">
+								<p>Or email us directly at <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="toast" class="toast"></div>
 		</section>
 	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<!-- Logo and Description -->
+				<div class="footer-section">
+					<div class="footer-logo">
+						<img src="../logo.png" alt="OmniTrust Logo" class="footer-logo-img" loading="lazy" decoding="async">
+					</div>
+					<p class="footer-description">
+						Strategic technology solutions for modern business. We partner with SMEs to deliver custom software solutions and drive measurable growth. Serving clients across Canada.
+					</p>
+					<div class="footer-contact">
+						<p>For general enquiries feel free to email us at:</p>
+						<a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+					</div>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="footer-section">
+					<h4>Quick Links</h4>
+					<ul class="footer-links">
+						<li><a href="/#services">Services</a></li>
+						<li><a href="/#products">Products</a></li>
+						<li><a href="/#team">Team</a></li>
+						<li><a href="/#contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<!-- Services -->
+				<div class="footer-section">
+					<h4>Services</h4>
+					<ul class="footer-links">
+						<li><a href="/services/process-digitalization.html">Process Digitalization</a></li>
+						<li><a href="/services/business-optimization.html">Business Optimization</a></li>
+						<li><a href="/services/custom-software-development.html">Custom Software Development</a></li>
+						<li><a href="/#contact">Consultation</a></li>
+					</ul>
+				</div>
+
+				<!-- Products -->
+				<div class="footer-section">
+					<h4>Products</h4>
+					<ul class="footer-links">
+						<li><a href="/#products">BootEasy</a></li>
+						<li><a href="/#products">OptiRoute</a></li>
+						<li><a href="/#contact">Custom Solutions</a></li>
+						<li><a href="/#contact">Enterprise Software</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="footer-bottom-content">
+					<p>&copy; 2024 OmniTrust. All rights reserved.</p>
+					<div class="footer-registration">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon" loading="lazy" decoding="async">
+						<span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
+					</div>
+					<div class="footer-bottom-links">
+						<a href="#privacy">Privacy Policy</a>
+						<a href="#terms">Terms of Service</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../script.js"></script>
 </body>
 </html>
