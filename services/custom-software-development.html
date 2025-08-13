@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Custom Software Development in Canada | OmniTrust</title>
+	<title>Custom Software Development Services in Canada | OmniTrust</title>
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="canonical" href="https://omnitrust.ca/services/custom-software-development.html">
-	<meta name="description" content="Custom software development for SMEs across Canada: web apps, integrations, data platforms, and automation tailored to your business.">
-	<meta property="og:title" content="Custom Software Development in Canada | OmniTrust">
-	<meta property="og:description" content="We design and build secure, scalable applications and integrations for SMEs across Canada.">
+	<meta name="description" content="Custom software development services for Canadian SMEs. We build tailored web applications, integrations, and data platforms that fit your business perfectly.">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Custom Software Development Services in Canada | OmniTrust">
+	<meta property="og:description" content="We design and build secure, scalable custom software applications and integrations for SMEs across Canada.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://omnitrust.ca/services/custom-software-development.html">
 	<meta property="og:image" content="https://omnitrust.ca/logo.png">
@@ -26,26 +27,492 @@
 	</script>
 </head>
 <body>
-	<main class="container">
-		<section class="section-header">
-			<h1>Custom Software Development</h1>
-			<p>We build tailored web applications and integrations for companies across Canada.</p>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="nav-container">
+			<div class="nav-content">
+				<!-- Logo -->
+				<div class="logo">
+					<a href="/">
+						<img src="../logo.png" alt="OmniTrust Logo" class="logo-img">
+					</a>
+				</div>
+
+				<!-- Desktop Navigation -->
+				<div class="desktop-nav">
+					<div class="nav-links">
+						<a href="/#services" class="nav-link">Services</a>
+						<a href="/#products" class="nav-link">Products</a>
+						<a href="/#team" class="nav-link">Team</a>
+						<a href="/#contact" class="nav-link">Contact</a>
+					</div>
+				</div>
+
+				<!-- Mobile menu button -->
+				<div class="mobile-menu-btn">
+					<button onclick="toggleMobileMenu()" class="menu-toggle">
+						<span class="hamburger" id="hamburger">☰</span>
+						<span class="close-x" id="close-x" style="display: none;">✕</span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Navigation -->
+		<div id="mobileMenu" class="mobile-nav">
+			<div class="mobile-nav-content">
+				<a href="/#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+				<a href="/#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
+				<a href="/#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
+				<a href="/#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- Breadcrumb Navigation -->
+		<section class="breadcrumb">
+			<div class="container">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb-list">
+						<li><a href="/">Home</a></li>
+						<li><a href="/#services">Services</a></li>
+						<li aria-current="page">Custom Software Development</li>
+					</ol>
+				</nav>
+			</div>
 		</section>
+
+		<!-- Hero Section -->
+		<section class="service-hero">
+			<div class="container">
+				<div class="service-hero-content">
+					<h1>Custom Software Development</h1>
+					<p class="hero-subtitle">Build powerful, scalable software solutions tailored to your unique business needs and workflows</p>
+					<div class="hero-buttons">
+						<button class="btn-primary" onclick="scrollToContact()">
+							Start Your Project
+							<span class="btn-arrow">→</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Overview Section -->
+		<section class="service-overview">
+			<div class="container">
+				<div class="section-header">
+					<h2>Software That Fits Your Business Perfectly</h2>
+					<p>We design and develop custom software solutions that align with your specific workflows, integrate with your existing systems, and scale with your growth.</p>
+				</div>
+				
+				<div class="overview-content">
+					<div class="overview-text">
+						<h3>Why Choose Custom Software?</h3>
+						<p>Off-the-shelf software often forces you to adapt your business to fit the tool. Custom software works the opposite way—it's built specifically for how your business operates. Our custom development services deliver:</p>
+						<ul class="feature-list">
+							<li>Perfect alignment with your business processes</li>
+							<li>Seamless integration with existing systems</li>
+							<li>Competitive advantage through unique capabilities</li>
+							<li>Complete ownership and control</li>
+							<li>Unlimited scalability and flexibility</li>
+						</ul>
+					</div>
+					<div class="overview-stats">
+						<div class="stat-card">
+							<div class="stat-number">100%</div>
+							<div class="stat-label">Tailored to Your Needs</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">3x</div>
+							<div class="stat-label">Faster Workflows</div>
+						</div>
+						<div class="stat-card">
+							<div class="stat-number">10+</div>
+							<div class="stat-label">Years of Experience</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Services Grid -->
 		<section class="services">
-			<div class="services-grid">
-				<div class="service-card"><div class="service-content"><h3>Web Applications</h3><p>Modern, secure applications aligned to your workflows.</p></div></div>
-				<div class="service-card"><div class="service-content"><h3>Systems Integration</h3><p>Connect ERP, CRM, accounting, and third-party tools.</p></div></div>
-				<div class="service-card"><div class="service-content"><h3>Data & Analytics</h3><p>Dashboards and insights to support decision-making.</p></div></div>
+			<div class="container">
+				<div class="section-header">
+					<h2>Our Development Services</h2>
+					<p>End-to-end custom software development for modern businesses</p>
+				</div>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-icon">🌐</div>
+						<div class="service-content">
+							<h3>Web Applications</h3>
+							<p>Modern, responsive web applications built with the latest technologies and best practices for performance and security.</p>
+							<ul class="service-features">
+								<li>Progressive Web Apps (PWA)</li>
+								<li>Single Page Applications (SPA)</li>
+								<li>Real-time collaboration features</li>
+								<li>Cloud-native architecture</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🔗</div>
+						<div class="service-content">
+							<h3>Systems Integration</h3>
+							<p>Connect your disparate systems and data sources to create a unified, efficient technology ecosystem.</p>
+							<ul class="service-features">
+								<li>API development & integration</li>
+								<li>ERP/CRM connectivity</li>
+								<li>Third-party service integration</li>
+								<li>Data synchronization</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">📊</div>
+						<div class="service-content">
+							<h3>Data & Analytics Platforms</h3>
+							<p>Transform your data into actionable insights with custom analytics solutions and interactive dashboards.</p>
+							<ul class="service-features">
+								<li>Business intelligence dashboards</li>
+								<li>Data warehousing solutions</li>
+								<li>Predictive analytics</li>
+								<li>Real-time reporting</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🛒</div>
+						<div class="service-content">
+							<h3>E-commerce Solutions</h3>
+							<p>Custom e-commerce platforms that provide unique shopping experiences and streamline operations.</p>
+							<ul class="service-features">
+								<li>Custom checkout flows</li>
+								<li>Inventory management</li>
+								<li>Multi-channel selling</li>
+								<li>Payment gateway integration</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">📱</div>
+						<div class="service-content">
+							<h3>Mobile-First Development</h3>
+							<p>Responsive applications that work seamlessly across all devices, optimized for mobile performance.</p>
+							<ul class="service-features">
+								<li>Responsive web design</li>
+								<li>Touch-optimized interfaces</li>
+								<li>Offline capabilities</li>
+								<li>Push notifications</li>
+							</ul>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-icon">🤖</div>
+						<div class="service-content">
+							<h3>Automation & AI</h3>
+							<p>Leverage automation and artificial intelligence to enhance your software capabilities and efficiency.</p>
+							<ul class="service-features">
+								<li>Workflow automation</li>
+								<li>Machine learning integration</li>
+								<li>Natural language processing</li>
+								<li>Intelligent data processing</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
-		<section id="contact" class="contact">
-			<div class="contact-form-container">
-				<div class="contact-card"><div class="contact-card-header"><h3>Request a consultation</h3></div>
-				<div class="contact-card-content">
-					<p>Email <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a></p>
-				</div></div>
+
+		<!-- Development Process Section -->
+		<section class="process-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Our Development Process</h2>
+					<p>A structured approach to deliver high-quality software on time and budget</p>
+				</div>
+				<div class="process-timeline">
+					<div class="process-step">
+						<div class="step-number">1</div>
+						<h3>Discovery & Planning</h3>
+						<p>We dive deep into your requirements, understand your goals, and create a comprehensive project roadmap.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">2</div>
+						<h3>Design & Architecture</h3>
+						<p>Create intuitive user interfaces and robust system architecture that scales with your business.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">3</div>
+						<h3>Agile Development</h3>
+						<p>Build your software iteratively with regular demos and feedback loops to ensure alignment.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">4</div>
+						<h3>Testing & Quality Assurance</h3>
+						<p>Rigorous testing at every stage ensures your software is reliable, secure, and performs flawlessly.</p>
+					</div>
+					<div class="process-step">
+						<div class="step-number">5</div>
+						<h3>Deployment & Support</h3>
+						<p>Smooth deployment with comprehensive training and ongoing support to ensure success.</p>
+					</div>
+				</div>
 			</div>
+		</section>
+
+		<!-- Technology Stack Section -->
+		<section class="benefits-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Modern Technology Stack</h2>
+					<p>We use cutting-edge technologies to build robust, scalable solutions</p>
+				</div>
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<div class="benefit-icon">⚛️</div>
+						<h3>Frontend Technologies</h3>
+						<p>React, Vue.js, Angular, TypeScript, Tailwind CSS for modern, responsive interfaces</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">🔧</div>
+						<h3>Backend Technologies</h3>
+						<p>Node.js, Python, Java, .NET for robust server-side applications</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">🗄️</div>
+						<h3>Databases</h3>
+						<p>PostgreSQL, MySQL, MongoDB, Redis for reliable data storage</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">☁️</div>
+						<h3>Cloud Platforms</h3>
+						<p>AWS, Google Cloud, Azure for scalable infrastructure</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">🔒</div>
+						<h3>Security</h3>
+						<p>SSL/TLS, OAuth, encryption, security best practices</p>
+					</div>
+					<div class="benefit-card">
+						<div class="benefit-icon">🚀</div>
+						<h3>DevOps</h3>
+						<p>CI/CD pipelines, Docker, Kubernetes for efficient deployment</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Industries Section -->
+		<section class="industries-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Industries We Serve</h2>
+					<p>Custom software solutions for diverse sectors across Canada</p>
+				</div>
+				<div class="industries-list">
+					<div class="industry-item">
+						<h4>Healthcare & Medical</h4>
+						<p>Patient management systems, telemedicine platforms, health data analytics</p>
+					</div>
+					<div class="industry-item">
+						<h4>Financial Services</h4>
+						<p>Trading platforms, risk management systems, regulatory compliance tools</p>
+					</div>
+					<div class="industry-item">
+						<h4>Manufacturing</h4>
+						<p>Production planning, quality control systems, supply chain management</p>
+					</div>
+					<div class="industry-item">
+						<h4>Retail & E-commerce</h4>
+						<p>Online marketplaces, inventory systems, customer loyalty programs</p>
+					</div>
+					<div class="industry-item">
+						<h4>Professional Services</h4>
+						<p>Project management tools, client portals, billing systems</p>
+					</div>
+					<div class="industry-item">
+						<h4>Education</h4>
+						<p>Learning management systems, student portals, assessment platforms</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="faq-section">
+			<div class="container">
+				<div class="section-header">
+					<h2>Frequently Asked Questions</h2>
+					<p>Common questions about our custom software development services</p>
+				</div>
+				<div class="faq-grid">
+					<div class="faq-item">
+						<h3>How much does custom software development cost?</h3>
+						<p>Costs vary based on project complexity and scope. We provide detailed quotes after understanding your requirements and offer flexible engagement models to fit different budgets.</p>
+					</div>
+					<div class="faq-item">
+						<h3>How long does it take to develop custom software?</h3>
+						<p>Timeline depends on project complexity. Simple applications may take 2-3 months, while complex systems can take 6-12 months. We use agile methodology to deliver working software early and often.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Will I own the source code?</h3>
+						<p>Yes, you receive full ownership of all custom code we develop for you, along with documentation and deployment guides.</p>
+					</div>
+					<div class="faq-item">
+						<h3>Can you work with our existing IT team?</h3>
+						<p>Absolutely. We frequently collaborate with in-house teams, providing expertise where needed while ensuring knowledge transfer.</p>
+					</div>
+					<div class="faq-item">
+						<h3>What about ongoing maintenance and support?</h3>
+						<p>We offer comprehensive maintenance and support packages to keep your software running smoothly, with options for updates, bug fixes, and feature enhancements.</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do you ensure security?</h3>
+						<p>Security is built into every phase of development. We follow OWASP guidelines, implement secure coding practices, and conduct regular security audits.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2>Let's Build Something Amazing Together</h2>
+					<p>Ready to transform your ideas into powerful software solutions? Let's discuss your project.</p>
+					<div class="cta-buttons">
+						<button class="btn-primary" onclick="scrollToContact()">
+							Start Your Project
+							<span class="btn-arrow">→</span>
+						</button>
+						<a href="/" class="btn-secondary">
+							<span class="btn-icon">←</span>
+							Back to Home
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<div class="container">
+				<div class="section-header">
+					<h2>Discuss Your Software Project</h2>
+					<p>Tell us about your vision and let's explore how we can bring it to life</p>
+				</div>
+				<div class="contact-form-container">
+					<div class="contact-card">
+						<div class="contact-card-header">
+							<h3>Request a Consultation</h3>
+						</div>
+						<div class="contact-card-content">
+							<form id="contactForm" class="contact-form">
+								<div class="form-group">
+									<input type="text" id="name" name="name" required placeholder=" ">
+									<label for="name">Your Name</label>
+								</div>
+								<div class="form-group">
+									<input type="email" id="email" name="email" required placeholder=" ">
+									<label for="email">Email Address</label>
+								</div>
+								<div class="form-group">
+									<input type="text" id="company" name="company" placeholder=" ">
+									<label for="company">Company Name</label>
+								</div>
+								<div class="form-group">
+									<textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+									<label for="message">Describe your software project</label>
+								</div>
+								<button type="submit" class="submit-btn">
+									<span>Send Message</span>
+									<span class="btn-arrow">→</span>
+								</button>
+							</form>
+							<div class="contact-alternative">
+								<p>Or email us directly at <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="toast" class="toast"></div>
 		</section>
 	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<!-- Logo and Description -->
+				<div class="footer-section">
+					<div class="footer-logo">
+						<img src="../logo.png" alt="OmniTrust Logo" class="footer-logo-img" loading="lazy" decoding="async">
+					</div>
+					<p class="footer-description">
+						Strategic technology solutions for modern business. We partner with SMEs to deliver custom software solutions and drive measurable growth. Serving clients across Canada.
+					</p>
+					<div class="footer-contact">
+						<p>For general enquiries feel free to email us at:</p>
+						<a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+					</div>
+				</div>
+
+				<!-- Quick Links -->
+				<div class="footer-section">
+					<h4>Quick Links</h4>
+					<ul class="footer-links">
+						<li><a href="/#services">Services</a></li>
+						<li><a href="/#products">Products</a></li>
+						<li><a href="/#team">Team</a></li>
+						<li><a href="/#contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<!-- Services -->
+				<div class="footer-section">
+					<h4>Services</h4>
+					<ul class="footer-links">
+						<li><a href="/services/process-digitalization.html">Process Digitalization</a></li>
+						<li><a href="/services/business-optimization.html">Business Optimization</a></li>
+						<li><a href="/services/custom-software-development.html">Custom Software Development</a></li>
+						<li><a href="/#contact">Consultation</a></li>
+					</ul>
+				</div>
+
+				<!-- Products -->
+				<div class="footer-section">
+					<h4>Products</h4>
+					<ul class="footer-links">
+						<li><a href="/#products">BootEasy</a></li>
+						<li><a href="/#products">OptiRoute</a></li>
+						<li><a href="/#contact">Custom Solutions</a></li>
+						<li><a href="/#contact">Enterprise Software</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="footer-bottom-content">
+					<p>&copy; 2024 OmniTrust. All rights reserved.</p>
+					<div class="footer-registration">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon" loading="lazy" decoding="async">
+						<span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
+					</div>
+					<div class="footer-bottom-links">
+						<a href="#privacy">Privacy Policy</a>
+						<a href="#terms">Terms of Service</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../script.js"></script>
 </body>
 </html>
