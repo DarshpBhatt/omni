@@ -103,20 +103,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitText = document.getElementById('contactSubmitText');
     const submitIcon = document.getElementById('contactSubmitIcon');
     
+    // Discord Webhook URL
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1320210251257221190/gEc8TpGPMgFZ4bqDLiPjOTIHKYCZGVp5Y_FIRnHtn7edZYnt3jx2A0bJbqxRFy-34IDk";
+    
+    // Simple Email Pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                company: formData.get('company'),
-                phone: formData.get('phone'),
-                service: formData.get('service'),
-                message: formData.get('message')
-            };
+            const nameValue = formData.get('name').trim();
+            const emailValue = formData.get('email').trim();
+            const messageValue = formData.get('message').trim();
+            
+            // 1. Basic Validation Checks
+            if (!nameValue || !emailValue || !messageValue) {
+                alert('Please fill out all fields (Name, Email, and Message).');
+                return;
+            }
+            
+            // 2. Email Format Check
+            if (!emailPattern.test(emailValue)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
             
             // Disable submit button and show loading state
             submitBtn.disabled = true;
@@ -124,31 +137,35 @@ document.addEventListener('DOMContentLoaded', function() {
             submitIcon.textContent = '⏳';
         
         try {
-            // Simulate API call (replace with actual Discord webhook URL)
-            const webhookUrl = 'DISCORD_HOOK';
-            
-            const payload = {
-                content: `New contact form submission:
-**Name:** ${data.name}
-**Email:** ${data.email}
-**Message:** ${data.message}`
+            // 3. Construct a nicely formatted message for Discord
+            const discordPayload = {
+                // Use Discord's Markdown for clearer formatting
+                content: 
+                    `**New Contact Form Submission**\n\n` +
+                    `**Name:** ${nameValue}\n` +
+                    `**Email:** ${emailValue}\n` +
+                    `**Message:**\n${messageValue}`
             };
             
-            // For demo purposes, we'll simulate the webhook call
-            console.log('Would send to Discord webhook:', payload);
+            // 4. Send the data to Discord
+            const response = await fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(discordPayload)
+            });
             
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Show success message
-            showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            contactForm.reset();
+            if (response.ok) {
+                alert('Thank you! Your message has been sent successfully.');
+                contactForm.reset(); // Clear the form fields
+            } else {
+                alert('Oops! Something went wrong. Please try again later.');
+            }
             
         } catch (error) {
-            console.error('Error sending message:', error);
-            showToast('Failed to send message. Please try again.', 'error');
+            console.error('Error sending data to Discord:', error);
+            alert('Error sending your message. Please try again later.');
         } finally {
             // Reset button state
             submitBtn.disabled = false;
@@ -169,13 +186,23 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = new FormData(consultationForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                service: formData.get('service'),
-                message: formData.get('message')
-            };
+            const nameValue = formData.get('name').trim();
+            const emailValue = formData.get('email').trim();
+            const phoneValue = formData.get('phone') ? formData.get('phone').trim() : '';
+            const serviceValue = formData.get('service');
+            const messageValue = formData.get('message').trim();
+            
+            // 1. Basic Validation Checks
+            if (!nameValue || !emailValue || !messageValue) {
+                alert('Please fill out all fields (Name, Email, and Message).');
+                return;
+            }
+            
+            // 2. Email Format Check
+            if (!emailPattern.test(emailValue)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
             
             // Disable submit button and show loading state
             consultationSubmitBtn.disabled = true;
@@ -183,33 +210,38 @@ document.addEventListener('DOMContentLoaded', function() {
             consultationSubmitIcon.textContent = '⏳';
             
             try {
-                // Simulate API call
-                const webhookUrl = 'DISCORD_HOOK';
-                
-                const payload = {
-                    content: `New consultation request:
-**Name:** ${data.name}
-**Email:** ${data.email}
-**Phone:** ${data.phone || 'Not provided'}
-**Service:** ${data.service}
-**Message:** ${data.message}`
+                // 3. Construct a nicely formatted message for Discord
+                const discordPayload = {
+                    // Use Discord's Markdown for clearer formatting
+                    content: 
+                        `**New Consultation Request**\n\n` +
+                        `**Name:** ${nameValue}\n` +
+                        `**Email:** ${emailValue}\n` +
+                        `**Phone:** ${phoneValue || 'Not provided'}\n` +
+                        `**Service:** ${serviceValue}\n` +
+                        `**Message:**\n${messageValue}`
                 };
                 
-                console.log('Would send to Discord webhook:', payload);
+                // 4. Send the data to Discord
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(discordPayload)
+                });
                 
-                // Simulate API delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                
-                // Show success message
-                showToast('Consultation request sent! We\'ll contact you within 24 hours.', 'success');
-                
-                // Reset form and close modal
-                consultationForm.reset();
-                setTimeout(closeConsultationModal, 1500);
+                if (response.ok) {
+                    alert('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.');
+                    consultationForm.reset(); // Clear the form fields
+                    setTimeout(closeConsultationModal, 1500);
+                } else {
+                    alert('Oops! Something went wrong. Please try again later.');
+                }
                 
             } catch (error) {
-                console.error('Error sending consultation request:', error);
-                showToast('Failed to send request. Please try again.', 'error');
+                console.error('Error sending data to Discord:', error);
+                alert('Error sending your consultation request. Please try again later.');
             } finally {
                 // Reset button state
                 consultationSubmitBtn.disabled = false;
