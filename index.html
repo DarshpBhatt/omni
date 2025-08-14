@@ -150,7 +150,34 @@
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav">
                     <div class="nav-links">
-                        <a href="#services" class="nav-link">Services</a>
+                        <div class="nav-dropdown">
+                            <a href="#services" class="nav-link nav-link-dropdown">
+                                Services
+                                <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="/services/process-digitalization.html" class="dropdown-item">
+                                    <div class="dropdown-item-content">
+                                        <h4>Process Digitalization</h4>
+                                        <p>Transform manual processes into efficient digital workflows</p>
+                                    </div>
+                                </a>
+                                <a href="/services/business-optimization.html" class="dropdown-item">
+                                    <div class="dropdown-item-content">
+                                        <h4>Business Optimization</h4>
+                                        <p>Streamline operations and maximize business performance</p>
+                                    </div>
+                                </a>
+                                <a href="/services/custom-software-development.html" class="dropdown-item">
+                                    <div class="dropdown-item-content">
+                                        <h4>Custom Software Development</h4>
+                                        <p>Tailored solutions built specifically for your business needs</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                         <a href="#products" class="nav-link">Products</a>
                         <a href="#team" class="nav-link">Team</a>
                         <a href="#contact" class="nav-link">Contact</a>
@@ -170,7 +197,19 @@
         <!-- Mobile Navigation -->
         <div id="mobileMenu" class="mobile-nav">
             <div class="mobile-nav-content">
-                <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">Services</a>
+                <div class="mobile-nav-item">
+                    <a href="#services" class="mobile-nav-link mobile-nav-link-parent" onclick="toggleMobileSubmenu(event, 'services-submenu')">
+                        Services
+                        <svg class="mobile-dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div id="services-submenu" class="mobile-submenu">
+                        <a href="/services/process-digitalization.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Process Digitalization</a>
+                        <a href="/services/business-optimization.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Business Optimization</a>
+                        <a href="/services/custom-software-development.html" class="mobile-submenu-link" onclick="closeMobileMenu()">Custom Software Development</a>
+                    </div>
+                </div>
                 <a href="#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
                 <a href="#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
                 <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
@@ -704,9 +743,9 @@
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#services">Process Digitalization</a></li>
-                        <li><a href="#services">Business Optimization</a></li>
-                        <li><a href="#services">Custom Software Development</a></li>
+                        <li><a href="/services/process-digitalization.html">Process Digitalization</a></li>
+                        <li><a href="/services/business-optimization.html">Business Optimization</a></li>
+                        <li><a href="/services/custom-software-development.html">Custom Software Development</a></li>
                         <li><a href="#contact">Consultation</a></li>
                     </ul>
                 </div>
@@ -726,14 +765,10 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p>&copy; 2024 OmniTrust. All rights reserved.</p>
+                    <p>&copy; 2025 OmniTrust. All rights reserved.</p>
                     <div class="footer-registration">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Nova_Scotia.svg" alt="Nova Scotia Flag" class="flag-icon" loading="lazy" decoding="async">
                         <span>Nova Scotia Joint Stock Reg. Number: 4683627</span>
-                    </div>
-                    <div class="footer-bottom-links">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
                     </div>
                 </div>
             </div>
