@@ -733,6 +733,120 @@ p {
     }
 }
 
+/* Testimonials Section */
+.testimonials {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.testimonials-carousel {
+    max-width: 48rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonials-track {
+    position: relative;
+    min-height: 20rem;
+}
+
+.testimonial-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.testimonial-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.quote-icon {
+    font-size: 4rem;
+    line-height: 1;
+    color: #000;
+    font-family: Georgia, serif;
+    margin-bottom: 1rem;
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.testimonial-author h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.testimonial-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.indicator.active {
+    width: 2rem;
+    border-radius: 0.25rem;
+    background-color: #000;
+}
+
+.indicator:hover {
+    background-color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+    .testimonial-content {
+        padding: 2rem;
+    }
+    
+    .quote-icon {
+        font-size: 3rem;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
 /* Contact Section */
 .contact {
     padding: 5rem 0;

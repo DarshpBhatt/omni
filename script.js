@@ -227,3 +227,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Testimonial Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-card');
+    const indicators = document.querySelectorAll('.indicator');
+    const totalTestimonials = testimonials.length;
+    
+    // Function to show a specific testimonial
+    function showTestimonial(index) {
+        // Remove active class from all testimonials and indicators
+        testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Add active class to current testimonial and indicator
+        testimonials[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentTestimonial = index;
+    }
+    
+    // Function to go to next testimonial
+    function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+        showTestimonial(currentTestimonial);
+    }
+    
+    // Function to go to specific testimonial (for indicators)
+    window.goToTestimonial = function(index) {
+        showTestimonial(index);
+        // Reset the interval when user manually selects
+        clearInterval(autoRotate);
+        autoRotate = setInterval(nextTestimonial, 5000);
+    }
+    
+    // Auto-rotate testimonials every 5 seconds
+    let autoRotate = setInterval(nextTestimonial, 5000);
+    
+    // Pause rotation on hover
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', function() {
+            clearInterval(autoRotate);
+        });
+        
+        carousel.addEventListener('mouseleave', function() {
+            autoRotate = setInterval(nextTestimonial, 5000);
+        });
+    }
+    
+    // Add testimonial cards to intersection observer for fade-in animation
+    const testimonialObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    const testimonialsSection = document.querySelector('.testimonials');
+    if (testimonialsSection) {
+        testimonialsSection.style.opacity = '0';
+        testimonialsSection.style.transform = 'translateY(20px)';
+        testimonialsSection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        testimonialObserver.observe(testimonialsSection);
+    }
+});
