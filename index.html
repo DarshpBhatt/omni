@@ -651,15 +651,124 @@
                 <div class="section-header">
                     <h2>Ready to Transform Your Business?</h2>
                     <p>Schedule a consultation to discuss how we can help you achieve your goals.</p>
-                    <button class="btn-primary" onclick="openConsultationModal()">
-                        <span class="btn-icon">📅</span>
-                        Request Consultation
-                        <span class="btn-arrow">→</span>
-                    </button>
-                    <div class="contact-email" style="margin-top: 2rem;">
-                        <span>📧</span>
-                        <span>Or email us directly: </span>
-                        <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name *</label>
+                                    <input
+                                        type="text"
+                                        id="contact-name"
+                                        name="name"
+                                        placeholder="John Doe"
+                                        required
+                                        class="form-input"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input
+                                        type="email"
+                                        id="contact-email"
+                                        name="email"
+                                        placeholder="john@company.com"
+                                        required
+                                        class="form-input"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-company">Company</label>
+                                    <input
+                                        type="text"
+                                        id="contact-company"
+                                        name="company"
+                                        placeholder="Your Company"
+                                        class="form-input"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-phone">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        id="contact-phone"
+                                        name="phone"
+                                        placeholder="+1 (555) 123-4567"
+                                        class="form-input"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-service">Service Interested In</label>
+                                <select id="contact-service" name="service" class="form-input">
+                                    <option value="">Select a service</option>
+                                    <option value="process-digitalization">Process Digitalization</option>
+                                    <option value="business-optimization">Business Optimization</option>
+                                    <option value="custom-software">Custom Software Development</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    placeholder="Tell us about your project or business challenge..."
+                                    rows="5"
+                                    required
+                                    class="form-input"
+                                ></textarea>
+                            </div>
+                            
+                            <button type="submit" class="form-submit-btn" id="contactSubmitBtn">
+                                <span id="contactSubmitText">Send Message</span>
+                                <span id="contactSubmitIcon">📧</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>We're here to help transform your business with innovative technology solutions.</p>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Serving businesses across Canada</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🕐</div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-cta">
+                            <p>Prefer to schedule a consultation?</p>
+                            <button class="btn-secondary" onclick="openConsultationModal()">
+                                <span class="btn-icon">📅</span>
+                                Request Consultation
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
