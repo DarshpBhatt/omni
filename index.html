@@ -180,7 +180,7 @@
                         </div>
                         <a href="#products" class="nav-link">Products</a>
                         <a href="#team" class="nav-link">Team</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link" onclick="openConsultationModal(); return false;">Contact</a>
                     </div>
                 </div>
 
@@ -212,7 +212,7 @@
                 </div>
                 <a href="#products" class="mobile-nav-link" onclick="closeMobileMenu()">Products</a>
                 <a href="#team" class="mobile-nav-link" onclick="closeMobileMenu()">Team</a>
-                <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+                <a href="#" class="mobile-nav-link" onclick="closeMobileMenu(); openConsultationModal(); return false;">Contact</a>
             </div>
         </div>
     </nav>
@@ -649,58 +649,17 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Contact Us</h2>
-                    <p>Ready to transform your business? Get in touch to explore how we can help you succeed.</p>
-                    <div class="contact-email">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Schedule a consultation to discuss how we can help you achieve your goals.</p>
+                    <button class="btn-primary" onclick="openConsultationModal()">
+                        <span class="btn-icon">📅</span>
+                        Request Consultation
+                        <span class="btn-arrow">→</span>
+                    </button>
+                    <div class="contact-email" style="margin-top: 2rem;">
                         <span>📧</span>
-                        <span>General inquiries: </span>
+                        <span>Or email us directly: </span>
                         <a href="mailto:contact@omnitrust.ca">contact@omnitrust.ca</a>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container">
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <h3>Send us a message</h3>
-                        </div>
-                        <div class="contact-card-content">
-                            <form id="contactForm" class="contact-form">
-                                <div class="form-group">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Your Full Name"
-                                        required
-                                        class="form-input"
-                                    >
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Your Email Address"
-                                        required
-                                        class="form-input"
-                                    >
-                                </div>
-                                
-                                <div class="form-group">
-                                    <textarea
-                                        name="message"
-                                        placeholder="Describe your project or inquiry"
-                                        required
-                                        rows="5"
-                                        class="form-textarea"
-                                    ></textarea>
-                                </div>
-                                
-                                <button type="submit" class="form-submit-btn" id="submitBtn">
-                                    <span id="submitText">Send Message</span>
-                                    <span id="submitIcon">📨</span>
-                                </button>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -746,7 +705,7 @@
                         <li><a href="/services/process-digitalization.html">Process Digitalization</a></li>
                         <li><a href="/services/business-optimization.html">Business Optimization</a></li>
                         <li><a href="/services/custom-software-development.html">Custom Software Development</a></li>
-                        <li><a href="#contact">Consultation</a></li>
+                        <li><a href="#" onclick="openConsultationModal(); return false;">Consultation</a></li>
                     </ul>
                 </div>
 
@@ -774,6 +733,77 @@
             </div>
         </div>
     </footer>
+
+    <!-- Consultation Modal -->
+    <div id="consultationModal" class="modal-overlay">
+        <div class="modal-backdrop" onclick="closeConsultationModal()"></div>
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeConsultationModal()">
+                <span>✕</span>
+            </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Request a Consultation</h2>
+                    <p>Let's discuss how we can transform your business with our technology solutions</p>
+                </div>
+                <form id="consultationForm" class="consultation-form">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your Full Name"
+                            required
+                            class="form-input"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Your Email Address"
+                            required
+                            class="form-input"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Phone Number (Optional)"
+                            class="form-input"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <select name="service" class="form-input" required>
+                            <option value="">Select Service of Interest</option>
+                            <option value="process-digitalization">Process Digitalization</option>
+                            <option value="business-optimization">Business Optimization</option>
+                            <option value="custom-software">Custom Software Development</option>
+                            <option value="general">General Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea
+                            name="message"
+                            placeholder="Tell us about your project or challenge"
+                            required
+                            rows="4"
+                            class="form-textarea"
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit-btn" id="consultationSubmitBtn">
+                        <span id="consultationSubmitText">Request Consultation</span>
+                        <span id="consultationSubmitIcon">📅</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
