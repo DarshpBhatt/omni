@@ -66,7 +66,10 @@ function toggleMobileSubmenu(event, submenuId) {
 
 // Smooth scrolling functions
 function scrollToContact() {
-    openConsultationModal();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 function scrollToServices() {
@@ -96,25 +99,29 @@ document.addEventListener('keydown', function(e) {
 // Contact form functionality
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const submitText = document.getElementById('submitText');
-    const submitIcon = document.getElementById('submitIcon');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    const submitText = document.getElementById('contactSubmitText');
+    const submitIcon = document.getElementById('contactSubmitIcon');
     
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
-        
-        // Disable submit button and show loading state
-        submitBtn.disabled = true;
-        submitText.textContent = 'Sending...';
-        submitIcon.textContent = '⏳';
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+                phone: formData.get('phone'),
+                service: formData.get('service'),
+                message: formData.get('message')
+            };
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Sending...';
+            submitIcon.textContent = '⏳';
         
         try {
             // Simulate API call (replace with actual Discord webhook URL)
