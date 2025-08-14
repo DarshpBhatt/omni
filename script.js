@@ -118,6 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const nameValue = formData.get('name').trim();
             const emailValue = formData.get('email').trim();
             const messageValue = formData.get('message').trim();
+            const companyValue = formData.get('company') ? formData.get('company').trim() : '';
+            const phoneValue = formData.get('phone') ? formData.get('phone').trim() : '';
+            const serviceValue = formData.get('service') || '';
             
             // 1. Basic Validation Checks
             if (!nameValue || !emailValue || !messageValue) {
@@ -144,10 +147,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     `**New Contact Form Submission**\n\n` +
                     `**Name:** ${nameValue}\n` +
                     `**Email:** ${emailValue}\n` +
-                    `**Message:**\n${messageValue}`
+                    `**Company:** ${companyValue || 'Not provided'}\n` +
+                    `**Phone:** ${phoneValue || 'Not provided'}\n` +
+                    `**Service Interest:** ${serviceValue || 'Not specified'}\n` +
+                    `**Message:**\n${messageValue}\n\n` +
+                    `**Submitted at:** ${new Date().toLocaleString()}`
             };
             
             // 4. Send the data to Discord
+            console.log('Sending to Discord webhook:', DISCORD_WEBHOOK_URL);
+            console.log('Payload:', discordPayload);
+            
             const response = await fetch(DISCORD_WEBHOOK_URL, {
                 method: 'POST',
                 headers: {
@@ -156,10 +166,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(discordPayload)
             });
             
+            console.log('Response status:', response.status);
+            
             if (response.ok) {
                 showToast('Thank you! Your message has been sent successfully.', 'success');
                 contactForm.reset(); // Clear the form fields
             } else {
+                const errorText = await response.text();
+                console.error('Discord webhook error:', response.status, errorText);
                 showToast('Oops! Something went wrong. Please try again later.', 'error');
             }
             
@@ -172,7 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
             submitText.textContent = 'Send Message';
             submitIcon.textContent = '📨';
         }
-    });
+        });
+    }
     
     // Consultation form handler
     const consultationForm = document.getElementById('consultationForm');
@@ -219,10 +234,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         `**Email:** ${emailValue}\n` +
                         `**Phone:** ${phoneValue || 'Not provided'}\n` +
                         `**Service:** ${serviceValue}\n` +
-                        `**Message:**\n${messageValue}`
+                        `**Message:**\n${messageValue}\n\n` +
+                        `**Submitted at:** ${new Date().toLocaleString()}`
                 };
                 
                 // 4. Send the data to Discord
+                console.log('Sending consultation to Discord webhook:', DISCORD_WEBHOOK_URL);
+                console.log('Consultation payload:', discordPayload);
+                
                 const response = await fetch(DISCORD_WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
@@ -231,11 +250,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: JSON.stringify(discordPayload)
                 });
                 
+                console.log('Consultation response status:', response.status);
+                
                 if (response.ok) {
                     showToast('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.', 'success');
                     consultationForm.reset(); // Clear the form fields
                     setTimeout(closeConsultationModal, 1500);
                 } else {
+                    const errorText = await response.text();
+                    console.error('Discord webhook error:', response.status, errorText);
                     showToast('Oops! Something went wrong. Please try again later.', 'error');
                 }
                 
