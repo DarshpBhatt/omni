@@ -42,19 +42,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const consultationSubmitText = document.getElementById('consultationSubmitText');
     const consultationSubmitIcon = document.getElementById('consultationSubmitIcon');
     
+    // Discord Webhook URL
+    const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1320210251257221190/gEc8TpGPMgFZ4bqDLiPjOTIHKYCZGVp5Y_FIRnHtn7edZYnt3jx2A0bJbqxRFy-34IDk";
+    
+    // Simple Email Pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (consultationForm) {
         consultationForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(consultationForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                service: formData.get('service'),
-                message: formData.get('message')
-            };
+            const nameValue = formData.get('name').trim();
+            const emailValue = formData.get('email').trim();
+            const phoneValue = formData.get('phone') ? formData.get('phone').trim() : '';
+            const serviceValue = formData.get('service');
+            const messageValue = formData.get('message').trim();
+            
+            // 1. Basic Validation Checks
+            if (!nameValue || !emailValue || !messageValue) {
+                showToast('Please fill out all fields (Name, Email, and Message).', 'error');
+                return;
+            }
+            
+            // 2. Email Format Check
+            if (!emailPattern.test(emailValue)) {
+                showToast('Please enter a valid email address.', 'error');
+                return;
+            }
             
             // Disable submit button and show loading state
             consultationSubmitBtn.disabled = true;
@@ -62,33 +78,41 @@ document.addEventListener('DOMContentLoaded', function() {
             consultationSubmitIcon.textContent = '⏳';
             
             try {
-                // Simulate API call
-                const webhookUrl = 'DISCORD_HOOK';
-                
                 const payload = {
-                    content: `New consultation request:
-**Name:** ${data.name}
-**Email:** ${data.email}
-**Phone:** ${data.phone || 'Not provided'}
-**Service:** ${data.service}
-**Message:** ${data.message}`
+                    content: `🔔 **New Consultation Request from Service Page**
+                    
+**Name:** ${nameValue}
+**Email:** ${emailValue}
+**Phone:** ${phoneValue || 'Not provided'}
+**Service:** ${serviceValue}
+**Message:** ${messageValue}
+**Date/Time:** ${new Date().toLocaleString('en-CA', { timeZone: 'America/Toronto' })}
+**Source:** Service Page Consultation Form`
                 };
                 
-                console.log('Would send to Discord webhook:', payload);
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
                 
-                // Simulate API delay
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                console.log('Consultation response status:', response.status);
                 
-                // Show success message
-                showToast('Consultation request sent! We\'ll contact you within 24 hours.', 'success');
-                
-                // Reset form and close modal
-                consultationForm.reset();
-                setTimeout(closeConsultationModal, 1500);
+                if (response.ok) {
+                    showToast('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.', 'success');
+                    consultationForm.reset(); // Clear the form fields
+                    setTimeout(closeConsultationModal, 1500);
+                } else {
+                    const errorText = await response.text();
+                    console.error('Discord webhook error:', response.status, errorText);
+                    showToast('Oops! Something went wrong. Please try again later.', 'error');
+                }
                 
             } catch (error) {
                 console.error('Error sending consultation request:', error);
-                showToast('Failed to send request. Please try again.', 'error');
+                showToast('Error sending your consultation request. Please try again later.', 'error');
             } finally {
                 // Reset button state
                 consultationSubmitBtn.disabled = false;
