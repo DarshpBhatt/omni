@@ -121,13 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 1. Basic Validation Checks
             if (!nameValue || !emailValue || !messageValue) {
-                alert('Please fill out all fields (Name, Email, and Message).');
+                showToast('Please fill out all fields (Name, Email, and Message).', 'error');
                 return;
             }
             
             // 2. Email Format Check
             if (!emailPattern.test(emailValue)) {
-                alert('Please enter a valid email address.');
+                showToast('Please enter a valid email address.', 'error');
                 return;
             }
             
@@ -157,15 +157,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (response.ok) {
-                alert('Thank you! Your message has been sent successfully.');
+                showToast('Thank you! Your message has been sent successfully.', 'success');
                 contactForm.reset(); // Clear the form fields
             } else {
-                alert('Oops! Something went wrong. Please try again later.');
+                showToast('Oops! Something went wrong. Please try again later.', 'error');
             }
             
         } catch (error) {
             console.error('Error sending data to Discord:', error);
-            alert('Error sending your message. Please try again later.');
+            showToast('Error sending your message. Please try again later.', 'error');
         } finally {
             // Reset button state
             submitBtn.disabled = false;
@@ -194,13 +194,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 1. Basic Validation Checks
             if (!nameValue || !emailValue || !messageValue) {
-                alert('Please fill out all fields (Name, Email, and Message).');
+                showToast('Please fill out all fields (Name, Email, and Message).', 'error');
                 return;
             }
             
             // 2. Email Format Check
             if (!emailPattern.test(emailValue)) {
-                alert('Please enter a valid email address.');
+                showToast('Please enter a valid email address.', 'error');
                 return;
             }
             
@@ -232,16 +232,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 if (response.ok) {
-                    alert('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.');
+                    showToast('Thank you! Your consultation request has been sent successfully. We\'ll contact you within 24 hours.', 'success');
                     consultationForm.reset(); // Clear the form fields
                     setTimeout(closeConsultationModal, 1500);
                 } else {
-                    alert('Oops! Something went wrong. Please try again later.');
+                    showToast('Oops! Something went wrong. Please try again later.', 'error');
                 }
                 
             } catch (error) {
                 console.error('Error sending data to Discord:', error);
-                alert('Error sending your consultation request. Please try again later.');
+                showToast('Error sending your consultation request. Please try again later.', 'error');
             } finally {
                 // Reset button state
                 consultationSubmitBtn.disabled = false;
