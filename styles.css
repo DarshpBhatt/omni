@@ -118,6 +118,26 @@ p {
     width: auto;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-text {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .desktop-nav {
     display: none;
 }
@@ -1425,7 +1445,20 @@ p {
 
 .footer-logo-img {
     height: 2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1rem;
+}
+
+.footer-logo-text {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .footer-description {
