@@ -1,0 +1,14 @@
+# Files and directories to ignore when pushing to Shopify
+# This prevents unnecessary files from being uploaded
+
+node_modules/
+.git/
+.vscode/
+.DS_Store
+*.md
+README.md
+.env
+.env.local
+*.log
+package-lock.json
+yarn.lock

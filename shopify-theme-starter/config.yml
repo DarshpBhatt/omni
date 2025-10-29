@@ -1,0 +1,25 @@
+# config.yml
+# This file defines your theme's settings and customization options
+# When you use Shopify CLI to initialize a theme, this file will be generated
+# with many more options. This is just a placeholder structure.
+
+development:
+  password: ""
+  theme_id: ""
+  preview_theme_id: ""
+  store: "your-store.myshopify.com"
+  ignore_files:
+    - config/settings_data.json
+
+# Example theme settings structure (actual themes have much more):
+settings:
+  current:
+    theme_name: "Sparkling Pools & Spas Custom Theme"
+    theme_version: "1.0.0"
+  presets:
+    default:
+      colors:
+        primary: "#0066cc"
+        secondary: "#00cc99"
+      typography:
+        font_family: "Arial, sans-serif"

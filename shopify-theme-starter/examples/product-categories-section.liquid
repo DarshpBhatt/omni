@@ -1,0 +1,162 @@
+{% comment %}
+  Example: Product Categories Section for Sparkling Pools & Spas
+  Place in sections/product-categories.liquid
+  Shows featured collections for different product types
+{% endcomment %}
+
+<section class="product-categories" id="product-categories">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="product-categories__heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    <div class="product-categories__grid">
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection != blank %}
+          <div class="product-categories__item" {{ block.shopify_attributes }}>
+            <a href="{{ collection.url }}" class="product-categories__link">
+              {% if block.settings.image != blank %}
+                <img 
+                  src="{{ block.settings.image | image_url: width: 400 }}" 
+                  alt="{{ collection.title }}"
+                  class="product-categories__image"
+                  loading="lazy"
+                >
+              {% elsif collection.featured_image %}
+                <img 
+                  src="{{ collection.featured_image | image_url: width: 400 }}" 
+                  alt="{{ collection.title }}"
+                  class="product-categories__image"
+                  loading="lazy"
+                >
+              {% endif %}
+              
+              <div class="product-categories__content">
+                <h3 class="product-categories__title">{{ collection.title }}</h3>
+                {% if collection.description != blank %}
+                  <p class="product-categories__description">{{ collection.description | truncate: 100 }}</p>
+                {% endif %}
+                <span class="product-categories__count">{{ collection.products_count }} products</span>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by Category"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Image (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Categories",
+      "blocks": [
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .product-categories {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .product-categories__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .product-categories__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .product-categories__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-categories__link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  
+  .product-categories__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  .product-categories__content {
+    padding: 1.5rem;
+  }
+  
+  .product-categories__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .product-categories__description {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .product-categories__count {
+    color: #0066cc;
+    font-weight: 600;
+  }
+</style>
