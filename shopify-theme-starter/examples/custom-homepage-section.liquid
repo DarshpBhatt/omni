@@ -1,0 +1,109 @@
+{% comment %}
+  Example: Custom Homepage Section for Sparkling Pools & Spas
+  Place this file in sections/ directory (e.g., sections/hero-pools-spas.liquid)
+  Then reference it in templates/index.liquid using: {% section 'hero-pools-spas' %}
+{% endcomment %}
+
+<section class="hero-pools-spas" style="background-image: url('{{ section.settings.hero_image | image_url: width: 2000 }}');">
+  <div class="hero-pools-spas__container">
+    <div class="hero-pools-spas__content">
+      {% if section.settings.heading != blank %}
+        <h1 class="hero-pools-spas__heading">{{ section.settings.heading }}</h1>
+      {% endif %}
+      
+      {% if section.settings.subheading != blank %}
+        <p class="hero-pools-spas__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+      
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a href="{{ section.settings.button_link }}" class="hero-pools-spas__button">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero - Pools & Spas",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Transform Your Backyard Into Paradise"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Premium pools and spas for your home"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero - Pools & Spas"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .hero-pools-spas {
+    position: relative;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-pools-spas__container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+  }
+  
+  .hero-pools-spas__content {
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-pools-spas__heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-pools-spas__subheading {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-pools-spas__button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+</style>
